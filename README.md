@@ -51,12 +51,17 @@ ingest).
 ```bash
 uv sync                                        # install (creates .venv from uv.lock)
 cp .env.example .env                           # then set GOOGLE_API_KEY=...
+cp /path/to/user_manual.pdf data/manuals/victoria_plus_silent_manual.pdf   # see below
 
 uv run pool-assistant ingest data/manuals/     # parse, chunk and index the sample manual
                                                # (~1.2 GB embedding model downloaded once)
 uv run pool-assistant ask "How often must the mechanical seal be replaced?"
                                                # (~1.1 GB reranker model downloaded once)
 ```
+
+The sample manual (the Victoria Plus Silent PDF provided with the assessment) is not
+redistributed in this repository: copy it into `data/manuals/` with the name above. That name
+is the one the integration tests look for; without the file they are skipped.
 
 Ingestion works without an API key: vision transcriptions of figure pages are committed in
 `data/vision_cache/`. The index is local (embedded Qdrant in `data/index/`), no server needed.

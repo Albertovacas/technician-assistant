@@ -12,6 +12,7 @@ __pycache__/
 
 data/.cache/
 data/index/
+data/manuals/*.pdf
 notebooks/
 docs/
 scripts/

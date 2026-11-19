@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+
+
+data/.cache/
+data/index/
+notebooks/
+docs/
+scripts/
+eval/reports/
+eval/results/
+Fluidra_GenAI_Engineer_Technical_Assessment.pdf
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
